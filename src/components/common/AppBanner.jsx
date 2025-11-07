@@ -12,4 +12,4 @@ function AppBanner() {
   );
 }
 
-export default AppBanner;
+export { AppBanner };

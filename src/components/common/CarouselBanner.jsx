@@ -1,33 +1,12 @@
 import { useState } from "react";
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@/components/ui";
+import { BANNERS } from "@/constants";
 
 function CarouselBanner() {
-  const banners = [
-    {
-      title: "타이틀 타이틀 타이틀",
-      description: "디스크립션",
-    },
-    {
-      title: "타이틀 타이틀 타이틀",
-      description: "디스크립션",
-    },
-    {
-      title: "타이틀 타이틀 타이틀",
-      description: "디스크립션",
-    },
-    {
-      title: "타이틀 타이틀 타이틀",
-      description: "디스크립션",
-    },
-    {
-      title: "타이틀 타이틀 타이틀",
-      description: "디스크립션",
-    },
-  ];
   return (
     <div>
       <section className="pt-10 pb-16 flex items-center gap-6 overflow-x-auto scrollbar-hide">
-        {banners.map((banner, index) => {
+        {BANNERS.map((banner, index) => {
           const [isLoading, setIsLoading] = useState(true);
           return (
             <div className="relative min-w-135 min-h-80 flex items-end">
@@ -58,4 +37,4 @@ function CarouselBanner() {
   );
 }
 
-export default CarouselBanner;
+export { CarouselBanner };

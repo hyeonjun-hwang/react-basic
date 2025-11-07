@@ -1,13 +1,17 @@
-import AppHeader from "@/components/common/AppHeader";
-import AppBanner from "@/components/common/AppBanner";
-import AppFamilySite from "@/components/common/AppFamilySite";
-import CarouselBanner from "@/components/common/CarouselBanner";
-import Category from "@/components/common/Category";
-import Content from "@/components/common/Content";
+import {
+  AppHeader,
+  AppBanner,
+  AppFamilySite,
+  CarouselBanner,
+  Category,
+  Content,
+  PofolChat,
+  Recruit,
+} from "@/components/common";
 
 function App() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full">
       {/* 배너 */}
       <AppBanner />
 
@@ -17,12 +21,21 @@ function App() {
       {/* 헤더 */}
       <AppHeader />
 
-      <main className="w-full h-full">
+      <main className="w-full">
         {/* 캐러셀 */}
         <CarouselBanner />
 
         {/* 카테고리 */}
         <Category />
+
+        {/* 콘텐츠 */}
+        <Content />
+
+        {/* 포트폴리오 */}
+        <PofolChat />
+
+        {/* 채용 */}
+        <Recruit />
 
         {/* 콘텐츠 */}
         <Content />

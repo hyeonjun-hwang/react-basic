@@ -1,4 +1,4 @@
-import { Separator } from "../ui/separator";
+import { Separator } from "@/components/ui";
 
 function AppFamilySite() {
   return (
@@ -14,4 +14,4 @@ function AppFamilySite() {
   );
 }
 
-export default AppFamilySite;
+export { AppFamilySite };
