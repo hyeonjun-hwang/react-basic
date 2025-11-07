@@ -45,7 +45,7 @@ function Recruit() {
               <div className="w-76">
                 {/* 이미지 */}
                 <div className="h-55">
-                  <Skeleton className="w-full h-full rounded-b-none z-1"></Skeleton>
+                  <Skeleton className="w-full h-full z-1 bg-gray-400"></Skeleton>
                 </div>
 
                 <div className="w-full h-fit p-5 flex items-center gap-3 rounded-b-md bg-white">
