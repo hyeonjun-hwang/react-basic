@@ -7,6 +7,8 @@ import {
   Content,
   PofolChat,
   Recruit,
+  Footer,
+  LoginInducement,
 } from "@/components/common";
 
 function App() {
@@ -39,7 +41,12 @@ function App() {
 
         {/* 콘텐츠 */}
         <Content />
+
+        {/* 로그인 유도 */}
+        <LoginInducement />
       </main>
+
+      <Footer />
     </div>
   );
 }

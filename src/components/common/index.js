@@ -5,4 +5,6 @@ export { CarouselBanner } from "./CarouselBanner";
 export { Category } from "./Category";
 export { Content } from "./Content";
 export { PofolChat } from "./PofolChat";
-export { Recruit } from "./recruit";
+export { Recruit } from "./Recruit";
+export { Footer } from "./Footer";
+export { LoginInducement } from "./LoginInducement";
