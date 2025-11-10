@@ -12,7 +12,7 @@ import { createRoot } from "react-dom/client";
 // );
 
 // ======== 과제 or 스터디 용========
-import { App } from "./days/day27/App.jsx";
+import { App } from "./days/day29/App.jsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(

@@ -1,44 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Body } from "./Body";
+import { Body2 } from "./Body2";
+import { Viewer } from "./Viewer";
+import { Controller } from "./Controller";
 
 function App() {
-  const [result, setResult] = useState([]);
+  const [count, setCount] = useState(0);
 
-  const unsplashApi = axios.create({
-    baseURL: "https://api.unsplash.com/",
-    params: {
-      client_id: "pPry_0pVJ3aSOKnlynlhVUK8qXZhObbPmF8aUs0rY1M",
-    },
-  });
-
-  const fetchSearchPhotos = async () => {
-    const res = await unsplashApi.get("/search/photos", {
-      params: {
-        page: 1,
-        per_page: 2,
-        query: "illustration",
-      },
-    });
-
-    const result = res.data.results.map((item) => item.urls.full);
-
-    setResult(result);
+  const handleSetCount = (value) => {
+    setCount(count + value);
   };
 
-  useEffect(() => {
-    fetchSearchPhotos();
-  }, []);
-
   return (
-    <div>
-      App : day29
-      <div className="p-10 flex gap-3">
-        {result.map((item, i) => (
-          <img className="w-100 h-100 rounded-xl" key={i} src={item} alt="" />
-        ))}
-      </div>
+    <div className="m-5">
+      <h1>Simple Counter</h1>
+
+      <Viewer count={count} />
+
+      <Controller handleSetCount={handleSetCount} />
     </div>
   );
 }
 
-export default App;
+export { App };
