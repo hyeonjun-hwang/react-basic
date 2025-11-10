@@ -39,9 +39,9 @@ function PofolChat() {
 
       {/* 카드 */}
       <div className="flex overflow-x-auto scrollbar-hide gap-8">
-        {MENTORS.map((mentor) => {
+        {MENTORS.map((mentor, i) => {
           return (
-            <div className="min-w-76">
+            <div key={i} className="min-w-76">
               {/* 이미지, 뱃지 */}
               <div className="h-55">
                 <Skeleton className="relative w-full h-full rounded-b-none z-1">

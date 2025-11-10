@@ -16,9 +16,12 @@ function AppHeader() {
 
         {/* 메뉴 */}
         <nav className="flex items-center gap-5">
-          {MENU.map((item) => {
+          {MENU.map((item, i) => {
             return (
-              <div className="font-medium flex items-center gap-1 cursor-pointer">
+              <div
+                key={i}
+                className="font-medium flex items-center gap-1 cursor-pointer"
+              >
                 {item.lable}
                 {item.newest && <p className="text-xs text-emerald-400">NEW</p>}
                 {item.dropdown && <ChevronDown size={16} />}

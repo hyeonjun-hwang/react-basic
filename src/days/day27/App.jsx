@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import {
   AppHeader,
   AppBanner,
@@ -12,6 +14,34 @@ import {
 } from "@/components/common";
 
 function App() {
+  // 언스플레쉬 이미지 가져오는 API
+  const [result, setResult] = useState([]);
+
+  const unsplashApi = axios.create({
+    baseURL: "https://api.unsplash.com/",
+    params: {
+      client_id: "pPry_0pVJ3aSOKnlynlhVUK8qXZhObbPmF8aUs0rY1M",
+    },
+  });
+
+  const fetchSearchPhotos = async () => {
+    const res = await unsplashApi.get("/search/photos", {
+      params: {
+        page: 1,
+        per_page: 16,
+        query: "modern",
+      },
+    });
+    const result = res.data.results;
+    console.log("result :", result);
+    setResult(result);
+  };
+
+  useEffect(() => {
+    fetchSearchPhotos();
+  }, []);
+  // ---
+
   return (
     <div className="w-full">
       {/* 배너 */}
@@ -31,7 +61,7 @@ function App() {
         <Category />
 
         {/* 콘텐츠 */}
-        <Content />
+        <Content result={result} />
 
         {/* 포트폴리오 */}
         <PofolChat />
@@ -40,7 +70,7 @@ function App() {
         <Recruit />
 
         {/* 콘텐츠 */}
-        <Content />
+        <Content result={result} />
 
         {/* 로그인 유도 */}
         <LoginInducement />
@@ -51,4 +81,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

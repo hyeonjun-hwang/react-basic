@@ -6,10 +6,10 @@ function CarouselBanner() {
   return (
     <div>
       <section className="pt-10 pb-16 flex items-center gap-6 overflow-x-auto scrollbar-hide">
-        {BANNERS.map((banner, index) => {
+        {BANNERS.map((banner, i) => {
           const [isLoading, setIsLoading] = useState(true);
           return (
-            <div className="relative min-w-135 min-h-80 flex items-end">
+            <div key={i} className="relative min-w-135 min-h-80 flex items-end">
               {/* 타이틀, 디스크립션 */}
               <div className="absolute left-6 bottom-4 flex flex-col gap-2 z-3 text-white">
                 <p className="text-2xl">{banner.title}</p>
@@ -23,7 +23,7 @@ function CarouselBanner() {
               )}
               <img
                 className="w-full h-full rounded-sm z-1"
-                src={`https://loremflickr.com/540/320/cartoon,vector,nature?random=${index}`}
+                src={`https://loremflickr.com/540/320/cartoon,vector,nature?random=${i}`}
                 onLoad={() => {
                   setIsLoading(false);
                 }}

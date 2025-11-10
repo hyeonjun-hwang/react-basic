@@ -40,9 +40,9 @@ function Recruit() {
 
         {/* 카드 */}
         <div className="flex overflow-x-auto scrollbar-hide gap-8">
-          {RECRUITMENT.map((RECRUITMENT) => {
+          {RECRUITMENT.map((RECRUITMENT, i) => {
             return (
-              <div className="w-76 flex flex-col gap-3">
+              <div key={i} className="w-76 flex flex-col gap-3">
                 {/* 이미지 */}
                 <div className="h-55">
                   <Skeleton className="w-full h-full z-1 bg-gray-400"></Skeleton>

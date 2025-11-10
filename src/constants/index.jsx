@@ -129,74 +129,6 @@ const tempAvatar = (
     <AvatarFallback>CN</AvatarFallback>
   </Avatar>
 );
-export const CONTENTS = [
-  {
-    avatar: tempAvatar,
-    username: "개발좋아",
-    views: 987,
-    likes: 45,
-  },
-  {
-    avatar: tempAvatar,
-    username: "클론코딩마스터",
-    views: 521,
-    likes: 72,
-  },
-  {
-    avatar: tempAvatar,
-    username: "로이드",
-    views: 450,
-    likes: 18,
-  },
-  {
-    avatar: tempAvatar,
-    username: "노란노루",
-    views: 339,
-    likes: 98,
-  },
-  {
-    avatar: tempAvatar,
-    username: "제이_워커",
-    views: 680,
-    likes: 55,
-  },
-  {
-    avatar: tempAvatar,
-    username: "커피한잔",
-    views: 310,
-    likes: 31,
-  },
-  {
-    avatar: tempAvatar,
-    username: "프론트엔드_짱",
-    views: 770,
-    likes: 52,
-  },
-  {
-    avatar: tempAvatar,
-    username: "피카츄번개",
-    views: 105,
-    likes: 11,
-  },
-  {
-    avatar: tempAvatar,
-    username: "새벽코딩",
-    views: 220,
-    likes: 9,
-  },
-  {
-    avatar: tempAvatar,
-    username: "테일윈드덕후",
-    views: 490,
-    likes: 41,
-  },
-  {
-    avatar: tempAvatar,
-    username: "코드쟁이",
-    views: 880,
-    likes: 7,
-  },
-];
 
 // PofolChat.jsx
 export const MENTORS = [
@@ -259,4 +191,15 @@ export const RECRUITMENT = [
     title: "상급 의적 채용",
     company: "활빈당",
   },
+];
+
+// Footer.jsx
+export const FOOTERLINKS = [
+  "서비스소개",
+  "공지사항",
+  "운영정책",
+  "개인정보처리방침",
+  "자주묻는질문",
+  "광고상품",
+  "문의하기",
 ];

@@ -16,13 +16,13 @@ function Category() {
 
       {/* 카테고리 리스트 */}
       <div className="flex gap-10 overflow-scroll scrollbar-hide">
-        {CATEGORYS.map((category) => {
+        {CATEGORYS.map((category, i) => {
           // isActive가 true일 때 클래스 추가
           const colorClass =
             category.isActive && "text-emerald-500 font-semibold";
 
           return (
-            <div className="w-fit flex flex-col items-center gap-2">
+            <div key={i} className="w-fit flex flex-col items-center gap-2">
               {category.isActive
                 ? React.cloneElement(category.icon, {
                     className: colorClass,

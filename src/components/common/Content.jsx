@@ -1,52 +1,73 @@
-import { useState } from "react";
-import { Skeleton, Avatar, AvatarFallback, AvatarImage } from "@/components/ui";
 import { Eye, Heart } from "lucide-react";
-import { CONTENTS } from "@/constants";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui";
 
-function Content() {
+function Content({ result = [] }) {
   return (
-    <div className="px-16 pt-4 pb-16 flex flex-wrap gap-6">
-      {/* 카드 */}
-      {CONTENTS.map((content, i) => {
-        const [isLoading, setIsLoading] = useState(true);
+    <section className="px-16 pt-4 pb-16 flex flex-wrap gap-6">
+      {result.map((result, i) => {
         return (
-          <div className="w-fit h-fit flex flex-col gap-3">
-            {/* 이미지 */}
-            <div className="w-75 h-75">
-              {isLoading && <Skeleton className="w-full h-full bg-gray-400" />}
-              <div>
-                <img
-                  className="w-full h-full rounded-md"
-                  src={`https://loremflickr.com/300/300/cartoon,vector,nature?random=${i}`}
-                  onLoad={() => setIsLoading(false)}
-                  alt=""
-                />
-              </div>
-            </div>
+          <Dialog key={i}>
+            <DialogTrigger>
+              {/* 카드 */}
+              <div className="w-fit h-fit flex flex-col gap-3 cursor-pointer">
+                {/* 이미지 */}
+                <div className="w-75 h-75">
+                  <img
+                    className="w-full h-full object-cover rounded-md"
+                    src={result.urls.small}
+                    alt="@IMAGE"
+                  />
+                </div>
 
-            <div className="flex justify-between">
-              {/* 유저 */}
-              <div className="flex gap-2 items-center">
-                {content.avatar}
-                <p className="text-sm font-medium">{content.username}</p>
-              </div>
+                <div className="flex justify-between">
+                  {/* 유저 */}
+                  <div className="flex gap-2 items-center">
+                    <img
+                      className="rounded-full"
+                      src={result.user.profile_image.small}
+                      alt="@PROFILE"
+                    />
+                    <p className="text-sm font-medium">
+                      {result.user.first_name}
+                    </p>
+                  </div>
 
-              {/* 조회수/좋아요 */}
-              <div className="flex items-center gap-2.5 text-xs font-medium text-gray-600/90">
-                <div className="flex items-center gap-0.5">
+                  {/* 조회수/좋아요 */}
+                  <div className="flex items-center gap-2.5 text-xs font-medium text-gray-600/90">
+                    {/* <div className="flex items-center gap-1">
                   <Eye className="w-4 h-4" />
                   <p>{content.views}</p>
-                </div>
-                <div className="flex items-center gap-0.5">
-                  <Heart className="w-4 h-4" />
-                  <p>{content.likes}</p>
+                </div> */}
+                    <div className="flex items-center gap-1">
+                      <Heart className="w-4 h-4" color="red" />
+                      <p>
+                        {result.likes
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>{result.alt_description}</DialogTitle>
+                <DialogDescription>{result.description}</DialogDescription>
+              </DialogHeader>
+              <img src={result.urls.regular} alt="" />
+            </DialogContent>
+          </Dialog>
         );
       })}
-    </div>
+    </section>
   );
 }
 
