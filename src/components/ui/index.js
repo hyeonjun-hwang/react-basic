@@ -44,3 +44,5 @@ export {
   SheetTitle,
   SheetDescription,
 } from "./sheet";
+export { Checkbox } from "./checkbox";
+export { Label } from "./label";

@@ -4,7 +4,7 @@ function Header() {
   const today = new Date().toLocaleDateString();
   return (
     <div className="flex flex-col gap-4">
-      <div className="text-2xl">오늘은 🗓️</div>
+      <p className="text-2xl">오늘은 🗓️</p>
       <div className="text-3xl text-gray-500">{today}</div>
     </div>
   );
