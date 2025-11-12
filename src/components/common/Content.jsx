@@ -10,21 +10,19 @@ import {
 
 function Content({ result = [] }) {
   return (
-    <section className="px-16 pt-4 pb-16 flex flex-wrap gap-6">
+    <section className="w-full px-6 lg:px-16 pt-4 pb-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
       {result.map((result, i) => {
         return (
           <Dialog key={i}>
             <DialogTrigger>
               {/* 카드 */}
-              <div className="w-fit h-fit flex flex-col gap-3 cursor-pointer">
+              <div className="flex flex-col gap-3 cursor-pointer">
                 {/* 이미지 */}
-                <div className="w-75 h-75">
-                  <img
-                    className="w-full h-full object-cover rounded-md"
-                    src={result.urls.small}
-                    alt="@IMAGE"
-                  />
-                </div>
+                <img
+                  className="aspect-square rounded-md"
+                  src={result.urls.small}
+                  alt="@IMAGE"
+                />
 
                 <div className="flex justify-between">
                   {/* 유저 */}

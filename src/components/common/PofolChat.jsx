@@ -11,10 +11,10 @@ import { MENTORS } from "@/constants";
 
 function PofolChat() {
   return (
-    <div className="px-16 py-10 bg-black ">
+    <div className="px-6 lg:px-16 py-10 bg-black ">
       {/* 타이틀 및 버튼 */}
       <div className="pb-8 flex items-center justify-between">
-        <h1 className="text-white text-2xl font-semibold">
+        <h1 className="text-white text-xl lg:text-2xl font-semibold">
           포트폴리오 피드백부터 커리어 상담까지!
         </h1>
         <div className="flex gap-4">

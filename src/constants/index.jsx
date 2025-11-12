@@ -170,26 +170,31 @@ export const RECRUITMENT = [
     icon: <BadgeCheck color="orange" size={48} />,
     title: "그래픽 디자이너 (3D) 채용asdasasdsadasdd",
     company: "토스플레이스",
+    description: "경력(5~10년) / 서울시 강남구",
   },
   {
     icon: <BadgeCheck color="purple" size={48} />,
     title: "그래픽 디자이너 채용",
     company: "이스트 스튜디오",
+    description: "경력(5~10년) / 서울시 강남구",
   },
   {
     icon: <BadgeCheck color="lightgray" size={48} />,
     title: "광고 대행사 디자이너",
     company: "브레이커스",
+    description: "경력(5~10년) / 서울시 강남구",
   },
   {
     icon: <BadgeCheck color="blue" size={48} />,
     title: "[미리캔버스] 그래픽 디자이너",
     company: "미리디",
+    description: "경력(5~10년) / 서울시 강남구",
   },
   {
     icon: <BadgeCheck color="black" size={48} />,
     title: "상급 의적 채용",
     company: "활빈당",
+    description: "경력(5~10년) / 서울시 강남구",
   },
 ];
 

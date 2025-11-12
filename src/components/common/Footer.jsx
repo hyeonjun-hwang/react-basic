@@ -16,7 +16,7 @@ import { FOOTERLINKS } from "@/constants";
 
 function Footer() {
   return (
-    <footer className="w-full px-4 py-2 fixed bottom-0 flex items-center justify-between border-t bg-white z-100">
+    <footer className="hidden w-full px-4 py-2 fixed bottom-0 lg:flex items-center justify-between border-t bg-white z-100">
       {/* 텍스트 묶음 영역 */}
       <div className="flex items-center gap-3 text-sm">
         <a href="">
