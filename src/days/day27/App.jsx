@@ -12,7 +12,6 @@ import {
   Footer,
   LoginInducement,
 } from "@/components/common";
-import { AppHeader2 } from "@/components/common/AppHeader2";
 
 function App() {
   // 언스플레쉬 이미지 가져오는 API
@@ -53,7 +52,6 @@ function App() {
 
       {/* 헤더 */}
       <AppHeader />
-      {/* <AppHeader2 /> */}
 
       <main className="w-full">
         {/* 캐러셀 */}
