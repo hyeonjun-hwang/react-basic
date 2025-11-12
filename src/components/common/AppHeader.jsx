@@ -11,9 +11,28 @@ import {
 } from "@/components/ui";
 import { ChevronDown, Search, Menu } from "lucide-react";
 import { MENU } from "@/constants";
+import { useState, useEffect } from "react";
 
 // 서치바 컴포넌트
-const SearchBar = ({ className }) => {
+const SearchBar = ({ onSetSearch, className, searchValue }) => {
+  const [inputValue, setInputValue] = useState(searchValue || "");
+
+  useEffect(() => {
+    setInputValue(searchValue || "");
+  }, [searchValue]);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onSetSearch(inputValue);
+
+      console.log("inputValue :", inputValue);
+    }
+  };
+  const handleOnClick = () => {
+    onSetSearch(inputValue);
+
+    console.log("inputValue :", inputValue);
+  };
   return (
     <div className={`relative flex items-center ${className}`}>
       <Input
@@ -21,10 +40,19 @@ const SearchBar = ({ className }) => {
           "pl-10 rounded-full w-full focus-visible:ring-0 placeholder:text-neutral-400 bg-neutral-50"
         }
         placeholder="230,000개 이상의 크리에이티브 검색"
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+          if (e.target.value === "") {
+            onSetSearch("");
+          }
+        }}
+        onKeyDown={handleKeyDown}
       ></Input>
       <Search
         className="absolute left-3.5 top-1/2 -translate-y-1/2 lg:text-neutral-400"
         size={18}
+        onClick={handleOnClick}
       ></Search>
     </div>
   );
@@ -50,7 +78,7 @@ const MenuItem = ({ item, className }) => {
   );
 };
 
-function AppHeader() {
+function AppHeader({ onSetSearch, searchValue }) {
   return (
     <header className="w-full flex items-start lg:items-center justify-between px-4 py-3 lg:px-6 border-b sticky top-0 bg-white z-5">
       {/* 좌측 : 로고, 메뉴 */}
@@ -117,7 +145,7 @@ function AppHeader() {
       {/* 우측 : 검색창 및 로그인/회원가입 */}
       <div className="flex items-center gap-2">
         {/* 검색창 */}
-        <SearchBar className="hidden lg:block w-76" />
+        <SearchBar onSetSearch={onSetSearch} className="hidden lg:block w-76" />
 
         {/* 검색 아이콘 (lg 미만) */}
         <Sheet>
@@ -133,7 +161,12 @@ function AppHeader() {
             <SheetHeader>
               <SheetTitle>검색어를 입력하세요</SheetTitle>
               <SheetDescription></SheetDescription>
-              <SearchBar className="w-full" />
+              {/* 검색바 */}
+              <SearchBar
+                searchValue={searchValue}
+                onSetSearch={onSetSearch}
+                className="w-full"
+              ></SearchBar>
             </SheetHeader>
           </SheetContent>
         </Sheet>

@@ -25,21 +25,25 @@ function App() {
   });
 
   const fetchSearchPhotos = async () => {
+    const query = search || category;
     const res = await unsplashApi.get("/search/photos", {
       params: {
         page: 1,
         per_page: 16,
-        query: "modern",
+        query: query,
       },
     });
     const result = res.data.results;
-    console.log("result :", result);
+    // console.log("result :", result);
     setResult(result);
   };
 
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("modern");
+
   useEffect(() => {
     fetchSearchPhotos();
-  }, []);
+  }, [category, search]);
   // ---
 
   return (
@@ -51,14 +55,14 @@ function App() {
       <AppFamilySite />
 
       {/* 헤더 */}
-      <AppHeader />
+      <AppHeader searchValue={search} onSetSearch={setSearch} />
 
       <main className="w-full">
         {/* 캐러셀 */}
         <CarouselBanner />
 
         {/* 카테고리 */}
-        <Category />
+        <Category onSetCategory={setCategory} />
 
         {/* 콘텐츠 */}
         <Content result={result} />

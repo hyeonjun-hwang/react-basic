@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui";
 import React from "react";
 import { CATEGORYS } from "@/constants";
 
-function Category() {
+function Category({ onSetCategory }) {
   return (
     <div className="sticky top-15 px-6 lg:px-16 py-3 flex items-center justify-center gap-10 bg-white z-4">
       {/* 정렬 */}
@@ -26,7 +26,14 @@ function Category() {
           const iconFinalClass = `${iconSize} ${colorClass || ""}`;
 
           return (
-            <div key={i} className="flex flex-col items-center gap-2">
+            <div
+              key={i}
+              className="flex flex-col items-center gap-2 cursor-pointer"
+              value={category.category}
+              onClick={() => {
+                onSetCategory(category.category);
+              }}
+            >
               {React.cloneElement(category.icon, {
                 className: iconFinalClass,
               })}

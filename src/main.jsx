@@ -11,7 +11,7 @@ import { createRoot } from "react-dom/client";
 //   // </StrictMode>
 // );
 
-// ======== 과제 or 스터디 용========
+// ======== 과제 ========
 import { App } from "./days/day27/App.jsx";
 import "./index.css";
 
@@ -20,3 +20,13 @@ createRoot(document.getElementById("root")).render(
   <App />
   // </StrictMode>
 );
+
+// ======== 스터디 ========
+// import { App } from "./study/todoApp/App.jsx";
+// import "./index.css";
+
+// createRoot(document.getElementById("root")).render(
+//   // <StrictMode>
+//   <App />
+//   // </StrictMode>
+// );
