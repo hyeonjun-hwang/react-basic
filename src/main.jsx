@@ -12,17 +12,7 @@ import { createRoot } from "react-dom/client";
 // );
 
 // ======== 과제 ========
-// import { App } from "./days/day27/App.jsx";
-// import "./index.css";
-
-// createRoot(document.getElementById("root")).render(
-//   // <StrictMode>
-//   <App />
-//   // </StrictMode>
-// );
-
-// ======== 스터디 ========
-import { App } from "./study/todoApp/App.jsx";
+import { App } from "./days/day27/App.jsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
@@ -30,3 +20,13 @@ createRoot(document.getElementById("root")).render(
   <App />
   // </StrictMode>
 );
+
+// ======== 스터디 ========
+// import { App } from "./study/todoApp/App.jsx";
+// import "./index.css";
+
+// createRoot(document.getElementById("root")).render(
+//   // <StrictMode>
+//   <App />
+//   // </StrictMode>
+// );
