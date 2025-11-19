@@ -2,7 +2,7 @@ import { React, useState, useEffect, useRef, useReducer } from "react";
 import { Header } from "./Header";
 import { TodoEditor } from "./TodoEditor";
 import { TodoList } from "./TodoList";
-import { TestComp } from "./TestComp";
+// import { TestComp } from "./TestComp";
 
 const mockTodo = [
   {
